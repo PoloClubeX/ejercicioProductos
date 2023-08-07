@@ -43,7 +43,7 @@ class Producto
 
 
 
-        $query = "EXEC spu_addProducto '$nombre','$precio',$idCategoria";
+        $query = "EXEC spu_addProducto '$nombre',$precio,$idCategoria";
         $res = sqlsrv_prepare($con, $query);
         try {
             if (sqlsrv_execute($res)) {
@@ -64,6 +64,32 @@ class Producto
 
     }
 
+    public function updateProducto($id, $nombre, $precio, $idCategoria)
+    {
+        global $con;
+        $query = "EXEC spu_ObtenerProductoById $id";
+        $res1 = sqlsrv_prepare($con, $query);
+        if (sqlsrv_execute($res1)) {
+            $query = "EXEC spu_updateProducto $id,'$nombre',$precio,$idCategoria";
+            $res = sqlsrv_prepare($con, $query);
+            try {
+                if (sqlsrv_execute($res)) {
+                    print('<meta http-equiv="refresh" content="0;url=controlador.php">');
+                    // header("location:insertar.php");
+                }
+            } catch (Exception $ex) {
+
+            }
+            if (sqlsrv_execute($res1)) {
+                print('<meta http-equiv="refresh" content="0;url=controlador.php">');
+            }
+        } else {
+            print('<meta http-equiv="refresh" content="0;url=controlador.php">');
+        }
+
+    }
+
+
 
     public function eliminarProductoById($idProducto)
     {
@@ -80,6 +106,18 @@ class Producto
         } else {
             print('<meta http-equiv="refresh" content="0;url=controlador.php">');
         }
+    }
+
+    public function buscarProductoById($idProducto)
+    {
+
+        global $con;
+        $query = "EXEC spu_ObtenerProductoById $idProducto";
+        $res = sqlsrv_query($con, $query);
+        while ($row = sqlsrv_fetch_array($res)) {
+            $this->producto[] = $row;
+        }
+        return $this->producto[0];
     }
 
 

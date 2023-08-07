@@ -49,9 +49,9 @@ if ((isset($_GET['id'])) && ($_GET['id'] != '') && (isset($_GET['action'])) && (
                         </td>
                         <td><a class="btn btn-danger" name="eliminar"
                                 href="controlador.php?action=delete&id= <?php echo $datosProductos[$i]["id"]; ?>">Eliminar</a>
-
-
-
+                        </td>
+                        <td><a class="btn btn-success" name="modificar"
+                                href="update.php?&id= <?php echo $datosProductos[$i]["id"]; ?>">Modificar</a>
                         </td>
                     </tr>
                     <?php
