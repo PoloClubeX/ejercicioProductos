@@ -27,17 +27,17 @@
                     <td><strong>Categoria</strong></td>
                 </tr>
                 <?php
-                for ($i = 0; $i < count($datos); $i++) {
+                for ($i = 0; $i < count($datosProductos); $i++) {
                     ?>
                     <tr>
                         <td>
-                            <?php echo $datos[$i]["nombre"]; ?>
+                            <?php echo $datosProductos[$i]["nombre"]; ?>
                         </td>
                         <td>
-                            <?php echo $datos[$i]["precio"]; ?>
+                            <?php echo $datosProductos[$i]["precio"]; ?>
                         </td>
                         <td>
-                            <?php echo $datos[$i]["idCategoria"]; ?>
+                            <?php echo $datosProductos[$i]["idCategoria"]; ?>
                         </td>
                     </tr>
                     <?php

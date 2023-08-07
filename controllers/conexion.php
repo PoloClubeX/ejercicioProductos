@@ -1,5 +1,4 @@
 <?php
-require_once("../models/modelo.php");
 $serverName = 'DESKTOP-12HO3KM\TESTELOPEZ';
 $dbName = 'CompanyX';
 $username = 'admin';

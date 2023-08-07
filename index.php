@@ -11,7 +11,7 @@ if ((isset($_POST['nombre'])) && ($_POST['nombre'] != '') && (isset($_POST['prec
 
 <head>
     <meta charset="UTF-8">
-    <title>Propuctos</title>
+    <title>Productos</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -29,7 +29,7 @@ if ((isset($_POST['nombre'])) && ($_POST['nombre'] != '') && (isset($_POST['prec
             <div class="col-lg-6">
 
                 <form action="#" method="post" class="col-lg-5">
-                    <h3>Nuevo servicio</h3>
+                    <h3>Nuevo Producto</h3>
                     Nombre: <input type="text" name="nombre" class="form-control" />
                     Precio: <input type="text" name="precio" class="form-control" />
                     Categoria: <input type="text" name="categoria" class="form-control" />
@@ -39,9 +39,9 @@ if ((isset($_POST['nombre'])) && ($_POST['nombre'] != '') && (isset($_POST['prec
             </div>
             <div class="col-lg-6 text-center">
                 <hr />
-                <h3>Listado de servicios</h3>
-                <a href="controllers/controlador.php"><i class="fa fa-align-justify"></i> Acceder al listado de
-                    servicios</a>
+                <h3>Listado de Productos</h3>
+                <a href="controllers/controlador.php"><i class="fa fa-align-justify"></i> Ver el listado de
+                    Productos</a>
                 <hr />
             </div>
         </div>
