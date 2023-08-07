@@ -40,6 +40,9 @@ class Producto
     {
         global $con;
         //self::setNames();
+
+
+
         $query = "EXEC spu_addProducto '$nombre','$precio',$idCategoria";
         $res = sqlsrv_prepare($con, $query);
         try {
@@ -60,6 +63,25 @@ class Producto
         }
 
     }
+
+
+    public function eliminarProductoById($idProducto)
+    {
+
+        global $con;
+        $query = "EXEC spu_ObtenerProductoById $idProducto";
+        $res1 = sqlsrv_prepare($con, $query);
+        if (sqlsrv_execute($res1)) {
+            $query = "EXEC spu_EliminarProducto $idProducto";
+            $res1 = sqlsrv_prepare($con, $query);
+            if (sqlsrv_execute($res1)) {
+                print('<meta http-equiv="refresh" content="0;url=controlador.php">');
+            }
+        } else {
+            print('<meta http-equiv="refresh" content="0;url=controlador.php">');
+        }
+    }
+
 
     public function setCategoria($nombre)
     {

@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html>
+<?php
+if ((isset($_GET['id'])) && ($_GET['id'] != '') && (isset($_GET['action'])) && ($_GET['action'] == 'delete')) {
+    require_once "../models/modelo.php";
+
+    $nuevo = new Producto();
+    $nuevo->eliminarProductoById($_GET['id']);
+}
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -38,6 +46,12 @@
                         </td>
                         <td>
                             <?php echo $datosProductos[$i]["idCategoria"]; ?>
+                        </td>
+                        <td><a class="btn btn-danger" name="eliminar"
+                                href="controlador.php?action=delete&id= <?php echo $datosProductos[$i]["id"]; ?>">Eliminar</a>
+
+
+
                         </td>
                     </tr>
                     <?php
