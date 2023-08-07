@@ -2,7 +2,7 @@
 <?php
 if ((isset($_POST['nombre'])) && ($_POST['nombre'] != '') && (isset($_POST['precio'])) && ($_POST['precio'] != '' && (isset($_POST['categoria'])) && ($_POST['categoria'] != ''))) {
 
-    include "models/modelo.php";
+    require_once "models/modelo.php";
     $nuevo = new Producto();
     $asd = $nuevo->setProducto($_POST['nombre'], $_POST['precio'], $_POST['categoria']);
 }

@@ -1,5 +1,6 @@
 <?php
-include "../controllers/conexion.php";
+//include "controllers/conexion.php";
+include "C:\wamp64\www/ejercicioProductos\controllers\conexion.php";
 class Producto
 {
     private $producto;

@@ -1,4 +1,5 @@
 <?php
+include "conexion.php";
 require_once("../models/modelo.php");
 $services = new Producto();
 $datosProductos = $services->getProductos();
